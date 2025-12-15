@@ -1,0 +1,81 @@
+#pages:hover{
+    color: blue;
+}
+.etude {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+}
+h3:hover {
+    color: blue;
+  }
+a:hover{
+    color: blue
+}
+.imgP{
+    transition: transform 0.3s ease-in-out;
+ }
+.imgP:hover{
+   
+   transform: scale(1.2);
+
+}
+h1 {
+    color: grey;
+    transition: text-shadow 0.3s ease-in-out;
+}
+
+h1:hover {
+    text-shadow: 2px 0px 4px rgba(0, 0, 0, 0.567); 
+}
+
+
+.header  {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 30vh;
+    margin: 0;
+}
+
+.p_container{
+    text-align: center;
+    margin-left: 100px;
+    margin-right: 100px;
+}
+
+.text{
+    padding: 10px;
+    background-color: transparent;
+    color: black;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+}
+.text:hover{
+    background-color: blue;
+    color: white;
+    transform: scale(1.1);
+}
+
+.rot1 {
+    display: block;
+  margin: auto;
+    transition: transform 0.5s ease;
+      }
+
+  .rot1:hover {
+    transform: rotate(360deg);
+  }
+
+  .rot {
+
+    transition: transform 0.5s ease;
+      }
+
+  .rot:hover {
+    transform: rotate(360deg);
+  }
+
+  
