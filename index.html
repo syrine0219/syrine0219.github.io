@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Syrine Ben Amra | DevOps & Cloud Engineer</title>
-  <link rel="icon" type="image/x-icon" href="img/mylogo.jpg">
+  <title>Syrine Ben Amara | DevOps & Cloud Engineer</title>
+  <link rel="icon" type="image/x-icon" href="img/logo4.jpg">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <!-- Add Kubernetes icon support -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
@@ -846,6 +846,8 @@
     .project-links {
       display: flex;
       gap: 1.5rem;
+        margin-top: 1.5rem;
+
     }
 
     .project-link {
@@ -860,6 +862,8 @@
       padding: 0.8rem 1.5rem;
       border-radius: 50px;
       background: rgba(255, 159, 219, 0.1);
+       border: 1px solid rgba(255, 159, 219, 0.2);
+  cursor: pointer;
     }
 
     .project-link:hover {
@@ -1305,6 +1309,87 @@
       content: "\f1d8";
       font-family: 'Font Awesome 6 Brands';
     }
+    /* Project Images Styles */
+.project-image-container {
+  position: relative;
+  width: 100%;
+  height: 250px;
+  margin-bottom: 2rem;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  border: 2px solid rgba(255, 159, 219, 0.3);
+  transition: var(--transition);
+}
+
+.project-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: var(--transition);
+}
+
+.project-image-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 159, 219, 0.2),
+    rgba(194, 156, 255, 0.2)
+  );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: var(--transition);
+}
+
+.project-image-container:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(255, 159, 219, 0.2);
+  border-color: var(--accent-pink);
+}
+
+.project-image-container:hover .project-image {
+  transform: scale(1.05);
+}
+
+.project-image-container:hover .project-image-overlay {
+  opacity: 1;
+}
+
+.view-project-btn {
+  padding: 0.8rem 1.5rem;
+  background: linear-gradient(135deg, var(--accent-pink), var(--accent-purple));
+  color: white;
+  border: none;
+  border-radius: 50px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.view-project-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 8px 20px rgba(255, 159, 219, 0.4);
+}
+
+/* Responsive adjustments for project images */
+@media (max-width: 768px) {
+  .project-image-container {
+    height: 200px;
+  }
+}
+
+@media (max-width: 480px) {
+  .project-image-container {
+    height: 180px;
+  }
+}
   </style>
 </head>
 <body>
@@ -1329,7 +1414,7 @@
     <div class="hero-content">
       <div class="hero-text">
         <p class="hero-greeting fade-in">Hello, I'm</p>
-        <h1 class="hero-name fade-in">Syrine Ben Amra</h1>
+        <h1 class="hero-name fade-in">Syrine Ben Amara</h1>
         <h2 class="hero-title fade-in">DevOps & Cloud Engineering Student</h2>
         <p class="hero-description fade-in" id="typingDescription">
           <!-- Text will be populated by JavaScript -->
@@ -1340,7 +1425,7 @@
       </div>
       <div class="hero-profile fade-in">
         <div class="profile-frame">
-          <img src="img/syrine.jpg" alt="Syrine Ben Amra" class="profile-image">
+          <img src="img/syrine.jpg" alt="Syrine Ben Amara" class="profile-image">
         </div>
         
         <!-- Floating Tech Icons -->
@@ -1521,67 +1606,82 @@
   </section>
 
   <!-- Projects Section -->
-  <section class="section" id="projects">
-    <h2 class="section-title fade-in">Featured Projects</h2>
-    <div class="projects-grid">
-      <div class="project-card fade-in">
-        <div class="project-header">
-          <div>
-            <h3 class="project-title">TurathAI - Cultural Heritage Platform</h3>
-            <span class="project-date">Cloud Integration Project</span>
-          </div>
-        </div>
-        <p class="project-description">
-          Development of a platform to promote Tunisia's heritage sites and cultural experiences with interactive maps and AI-powered personalized recommendations. Deployment on private cloud infrastructure using Docker and Ansible.
-        </p>
-        <div class="project-tech">
-          <span class="tech-tag">Docker</span>
-          <span class="tech-tag">Ansible</span>
-          <span class="tech-tag">AI</span>
-          <span class="tech-tag">Private Cloud</span>
-          <span class="tech-tag">Interactive Maps</span>
-          <span class="tech-tag">Python</span>
-        </div>
-        <div class="project-links">
-          <a href="https://github.com/syrine0219/TurathAI" class="project-link" target="_blank">
-            <i class="fab fa-github"></i> View Code
-          </a>
-          <a href="#contact" class="project-link">
-            <i class="fas fa-info-circle"></i> More Details
+<section class="section" id="projects">
+  <h2 class="section-title fade-in">Featured Projects</h2>
+  <div class="projects-grid">
+    <div class="project-card fade-in">
+      <div class="project-image-container">
+        <img src="img/turath.jpg" alt="TurathAI Project" class="project-image">
+        <div class="project-image-overlay">
+          <a href="https://github.com/syrine0219/TurathAI" class="view-project-btn" target="_blank">
+            View Project
           </a>
         </div>
       </div>
-
-      <div class="project-card fade-in">
-        <div class="project-header">
-          <div>
-            <h3 class="project-title">MatchMate - Sports Facility Booking</h3>
-            <span class="project-date">Integrated Project (Desktop, Web, Mobile)</span>
-          </div>
+      <div class="project-header">
+        <div>
+          <h3 class="project-title">TurathAI - Cultural Heritage Platform</h3>
+          <span class="project-date">Cloud Integration Project</span>
         </div>
-        <p class="project-description">
-          Sports facility reservation application with JavaFX. Database connection to manage reservations. Web version developed with Symfony. Modern and intuitive interface for managing sports time slots.
-        </p>
-        <div class="project-tech">
-          <span class="tech-tag">JavaFX</span>
-          <span class="tech-tag">Symfony</span>
-          <span class="tech-tag">MySQL</span>
-          <span class="tech-tag">Desktop App</span>
-          <span class="tech-tag">Web App</span>
-          <span class="tech-tag">Mobile</span>
-        </div>
-        <div class="project-links">
-          <a href="https://github.com/syrine0219/MatchMate" class="project-link" target="_blank">
-            <i class="fab fa-github"></i> View Code
-          </a>
-          <a href="#contact" class="project-link">
-            <i class="fas fa-info-circle"></i> More Details
-          </a>
-        </div>
+      </div>
+      <p class="project-description">
+        Development of a platform to promote Tunisia's heritage sites and cultural experiences with interactive maps and AI-powered personalized recommendations. Deployment on private cloud infrastructure using Docker and Ansible.
+      </p>
+      <div class="project-tech">
+        <span class="tech-tag">Docker</span>
+        <span class="tech-tag">Ansible</span>
+        <span class="tech-tag">AI</span>
+        <span class="tech-tag">Private Cloud</span>
+        <span class="tech-tag">Interactive Maps</span>
+        <span class="tech-tag">Python</span>
+      </div>
+      <div class="project-links">
+        <a href="https://github.com/syrine0219/TurathAI" class="project-link" target="_blank">
+          <i class="fab fa-github"></i> View Code
+        </a>
+        <button class="project-link" onclick="showProjectDetails('turathai')">
+          <i class="fas fa-info-circle"></i> More Details
+        </button>
       </div>
     </div>
-  </section>
 
+    <div class="project-card fade-in">
+      <div class="project-image-container">
+        <img src="img/match.jpg" alt="MatchMate Project" class="project-image">
+        <div class="project-image-overlay">
+          <a href="https://github.com/syrine0219/MatchMate" class="view-project-btn" target="_blank">
+            View Project
+          </a>
+        </div>
+      </div>
+      <div class="project-header">
+        <div>
+          <h3 class="project-title">MatchMate - Sports Facility Booking</h3>
+          <span class="project-date">Integrated Project (Desktop, Web, Mobile)</span>
+        </div>
+      </div>
+      <p class="project-description">
+        Sports facility reservation application with JavaFX. Database connection to manage reservations. Web version developed with Symfony. Modern and intuitive interface for managing sports time slots.
+      </p>
+      <div class="project-tech">
+        <span class="tech-tag">JavaFX</span>
+        <span class="tech-tag">Symfony</span>
+        <span class="tech-tag">MySQL</span>
+        <span class="tech-tag">Desktop App</span>
+        <span class="tech-tag">Web App</span>
+        <span class="tech-tag">Mobile</span>
+      </div>
+      <div class="project-links">
+        <a href="https://github.com/syrine0219/MatchMate" class="project-link" target="_blank">
+          <i class="fab fa-github"></i> View Code
+        </a>
+        <button class="project-link" onclick="showProjectDetails('matchmate')">
+          <i class="fas fa-info-circle"></i> More Details
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
   <!-- Resume Section -->
   <section class="section" id="resume">
     <h2 class="section-title fade-in">My Resume</h2>
@@ -1861,9 +1961,9 @@
       document.body.insertAdjacentHTML('afterbegin', `
         <header id="mainHeader">
           <a href="index.html" class="logo">
-            <img src="img/mylogo.jpg" alt="Syrine Ben Amra" class="logo-img">
+            <img src="img/syrine.jpg" alt="Syrine Ben Amara" class="logo-img">
             <div class="logo-text">
-              <span class="logo-name">Syrine Ben Amra</span>
+              <span class="logo-name">Syrine Ben Amara</span>
               <span class="logo-title">DevOps & Cloud Engineer</span>
             </div>
           </a>
@@ -1871,10 +1971,10 @@
             <li><a href="index.html">Home</a></li>
             <li><a href="index.html#about">About</a></li>
             <li><a href="index.html#skills">Skills</a></li>
+             <li><a href="index.html#projects">Projects</a></li>
             <li><a href="index.html#resume">Resume</a></li>
             <li><a href="education.html">Education</a></li>
             <li><a href="experience.html">Experience</a></li>
-            <li><a href="projects.html">Projects</a></li>
             <li><a href="index.html#contact">Contact</a></li>
           </ul>
           <button class="mobile-menu-btn">
@@ -1888,7 +1988,7 @@
         <footer>
           <div class="footer-content">
             <div class="footer-section">
-              <h3>Syrine Ben Amra</h3>
+              <h3>Syrine Ben Amara</h3>
               <p class="footer-about">
                 DevOps & Cloud Engineering student at ESPRIT, passionate about modern application development, cloud solutions, and pipeline automation.
               </p>
@@ -1907,7 +2007,7 @@
                 <li><a href="index.html#skills"><i class="fas fa-chevron-right"></i> Skills</a></li>
                 <li><a href="education.html"><i class="fas fa-chevron-right"></i> Education</a></li>
                 <li><a href="experience.html"><i class="fas fa-chevron-right"></i> Experience</a></li>
-                <li><a href="projects.html"><i class="fas fa-chevron-right"></i> Projects</a></li>
+                <li><a href="index.html#projects"><i class="fas fa-chevron-right"></i> Projects</a></li>
               </ul>
             </div>
             <div class="footer-section">
@@ -1921,11 +2021,255 @@
             </div>
           </div>
           <div class="footer-bottom">
-            <p>&copy; 2025 Syrine Ben Amra. All rights reserved.</p>
+            <p>&copy; 2025 Syrine Ben Amara. All rights reserved.</p>
             <p style="margin-top: 10px; font-size: 0.9rem; opacity: 0.7;">Developed with ❤️ and passion for technology</p>
           </div>
         </footer>
       `);
+      // Project Details Modal
+function showProjectDetails(projectId) {
+  const projectDetails = {
+    turathai: {
+      title: "TurathAI - Cultural Heritage Platform",
+      description: `
+        <p><strong>Project Overview:</strong> A comprehensive platform designed to promote Tunisia's rich cultural heritage through modern technology.</p>
+        
+        <h4>Key Features:</h4>
+        <ul>
+          <li>Interactive maps showcasing heritage sites across Tunisia</li>
+          <li>AI-powered personalized recommendations based on user preferences</li>
+          <li>Multimedia content including images, videos, and historical information</li>
+          <li>User profiles and bookmarking system</li>
+          <li>Multi-language support for international visitors</li>
+        </ul>
+        
+        <h4>Technical Implementation:</h4>
+        <ul>
+          <li><strong>Frontend:</strong> Modern responsive web interface</li>
+          <li><strong>Backend:</strong> Python-based API with AI integration</li>
+          <li><strong>AI/ML:</strong> Recommendation algorithms using machine learning</li>
+          <li><strong>Infrastructure:</strong> Private cloud deployment using Docker containers</li>
+          <li><strong>Automation:</strong> Ansible for configuration management</li>
+          <li><strong>Database:</strong> PostgreSQL with spatial extensions for mapping</li>
+        </ul>
+        
+        <h4>Technologies Used:</h4>
+        <p>Docker, Ansible, Python, PostgreSQL, React, Machine Learning APIs, RESTful APIs, Cloud Infrastructure</p>
+        
+        <h4>Project Impact:</h4>
+        <p>This project demonstrates the successful integration of cloud technologies, AI, and cultural preservation to create a scalable platform that can be adapted for other heritage sites worldwide.</p>
+      `
+    },
+    matchmate: {
+      title: "MatchMate - Sports Facility Booking System",
+      description: `
+        <p><strong>Project Overview:</strong> A multi-platform sports facility booking system designed to streamline reservation processes.</p>
+        
+        <h4>Key Features:</h4>
+        <ul>
+          <li><strong>Desktop Application:</strong> JavaFX interface for facility management</li>
+          <li><strong>Web Application:</strong> Symfony-based web interface for online booking</li>
+          <li><strong>Mobile Responsive:</strong> Optimized for mobile devices</li>
+          <li><strong>Real-time Availability:</strong> Live updates on facility availability</li>
+          <li><strong>User Management:</strong> Registration, profiles, and booking history</li>
+          <li><strong>Payment Integration:</strong> Secure payment processing</li>
+          <li><strong>Admin Dashboard:</strong> Comprehensive management interface</li>
+        </ul>
+        
+        <h4>Technical Implementation:</h4>
+        <ul>
+          <li><strong>Desktop Version:</strong> JavaFX with modern UI components</li>
+          <li><strong>Web Version:</strong> Symfony PHP framework with Bootstrap</li>
+          <li><strong>Database:</strong> MySQL with optimized schema for reservations</li>
+          <li><strong>Backend:</strong> RESTful API for data management</li>
+          <li><strong>Security:</strong> User authentication and authorization</li>
+          <li><strong>Responsive Design:</strong> Works on all screen sizes</li>
+        </ul>
+        
+        <h4>Technologies Used:</h4>
+        <p>JavaFX, Symfony, MySQL, PHP, JavaScript, HTML5, CSS3, Bootstrap, REST APIs</p>
+        
+        <h4>Project Impact:</h4>
+        <p>This project showcases full-stack development capabilities across multiple platforms, demonstrating proficiency in both desktop and web application development with database integration.</p>
+      `
+    }
+  };
+  
+  const project = projectDetails[projectId];
+  if (!project) return;
+  
+  // Create modal
+  const modal = document.createElement('div');
+  modal.className = 'project-modal';
+  modal.style.cssText = `
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(10, 10, 26, 0.95);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+    padding: 20px;
+    overflow-y: auto;
+  `;
+  
+  const modalContent = document.createElement('div');
+  modalContent.className = 'project-modal-content';
+  modalContent.style.cssText = `
+    background: var(--bg-card);
+    padding: 3rem;
+    border-radius: 25px;
+    max-width: 800px;
+    width: 100%;
+    max-height: 80vh;
+    overflow-y: auto;
+    position: relative;
+    box-shadow: 0 20px 50px rgba(255, 159, 219, 0.3);
+    border: 2px solid var(--accent-pink);
+  `;
+  
+  const closeBtn = document.createElement('button');
+  closeBtn.innerHTML = '&times;';
+  closeBtn.style.cssText = `
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: none;
+    border: none;
+    color: var(--accent-pink);
+    font-size: 2rem;
+    cursor: pointer;
+    transition: var(--transition);
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+  `;
+  closeBtn.onclick = () => {
+    document.body.removeChild(modal);
+    document.body.style.overflow = 'auto';
+  };
+  closeBtn.onmouseenter = () => {
+    closeBtn.style.transform = 'rotate(90deg)';
+    closeBtn.style.background = 'rgba(255, 159, 219, 0.1)';
+  };
+  closeBtn.onmouseleave = () => {
+    closeBtn.style.transform = 'rotate(0deg)';
+    closeBtn.style.background = 'none';
+  };
+  
+  const title = document.createElement('h2');
+  title.textContent = project.title;
+  title.style.cssText = `
+    color: var(--accent-pink);
+    margin-bottom: 1.5rem;
+    font-size: 2rem;
+    border-bottom: 2px solid rgba(255, 159, 219, 0.3);
+    padding-bottom: 0.5rem;
+  `;
+  
+  const description = document.createElement('div');
+  description.innerHTML = project.description;
+  description.style.cssText = `
+    color: var(--text-secondary);
+    line-height: 1.8;
+  `;
+  
+  description.querySelectorAll('h4').forEach(h4 => {
+    h4.style.cssText = `
+      color: var(--text-primary);
+      margin: 1.5rem 0 0.8rem 0;
+      font-size: 1.3rem;
+    `;
+  });
+  
+  description.querySelectorAll('ul').forEach(ul => {
+    ul.style.cssText = `
+      margin: 0.5rem 0 1rem 1.5rem;
+      list-style-type: disc;
+    `;
+  });
+  
+  description.querySelectorAll('li').forEach(li => {
+    li.style.marginBottom = '0.5rem';
+  });
+  
+  description.querySelectorAll('p').forEach(p => {
+    p.style.marginBottom = '1rem';
+  });
+  
+  modalContent.appendChild(closeBtn);
+  modalContent.appendChild(title);
+  modalContent.appendChild(description);
+  modal.appendChild(modalContent);
+  
+  // Add modal to body
+  document.body.appendChild(modal);
+  document.body.style.overflow = 'hidden';
+  
+  // Close modal on ESC key
+  const closeModal = (e) => {
+    if (e.key === 'Escape') {
+      document.body.removeChild(modal);
+      document.body.style.overflow = 'auto';
+      document.removeEventListener('keydown', closeModal);
+    }
+  };
+  
+  // Close modal on outside click
+  modal.onclick = (e) => {
+    if (e.target === modal) {
+      document.body.removeChild(modal);
+      document.body.style.overflow = 'auto';
+    }
+  };
+  
+  document.addEventListener('keydown', closeModal);
+}
+
+// Also add this CSS for modal content
+const modalStyles = `
+.project-modal-content h2 {
+  color: var(--accent-pink);
+  margin-bottom: 1.5rem;
+  font-size: 2rem;
+  border-bottom: 2px solid rgba(255, 159, 219, 0.3);
+  padding-bottom: 0.5rem;
+}
+
+.project-modal-content h4 {
+  color: var(--text-primary);
+  margin: 1.5rem 0 0.8rem 0;
+  font-size: 1.3rem;
+}
+
+.project-modal-content ul {
+  margin: 0.5rem 0 1rem 1.5rem;
+  list-style-type: disc;
+}
+
+.project-modal-content li {
+  margin-bottom: 0.5rem;
+}
+
+.project-modal-content p {
+  margin-bottom: 1rem;
+  line-height: 1.8;
+}
+`;
+
+// Add modal styles to document
+if (!document.querySelector('#modal-styles')) {
+  const styleElement = document.createElement('style');
+  styleElement.id = 'modal-styles';
+  styleElement.textContent = modalStyles;
+  document.head.appendChild(styleElement);
+}
 
       // Run all initializations
       createCosmicBackground();

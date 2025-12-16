@@ -1,0 +1,1451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Syrine Ben Amara | Education</title>
+  <link rel="icon" type="image/x-icon" href="img/logo4.jpg">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Add Kubernetes icon support -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
+  <style>
+    :root {
+      --bg-dark: #0a0a1a;
+      --bg-card: rgba(20, 20, 40, 0.8);
+      --accent-pink: #ff9fdb;
+      --accent-light-pink: #ffc2e9;
+      --accent-purple: #c29cff;
+      --accent-blue: #8ac6ff;
+      --text-primary: #ffffff;
+      --text-secondary: #d8c3ff;
+      --transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.1);
+      --glow: 0 0 25px rgba(255, 159, 219, 0.4);
+      --card-glow: 0 0 30px rgba(255, 159, 219, 0.15);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', 'Segoe UI', sans-serif;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background-color: var(--bg-dark);
+      color: var(--text-primary);
+      overflow-x: hidden;
+      line-height: 1.7;
+      position: relative;
+    }
+
+    /* Cosmic Background Animation */
+    .cosmic-bg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      background: 
+        radial-gradient(circle at 20% 30%, rgba(255, 159, 219, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 70%, rgba(194, 156, 255, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 40% 80%, rgba(138, 198, 255, 0.1) 0%, transparent 50%),
+        linear-gradient(45deg, #0a0a1a 0%, #1a1a2e 50%, #0f0f23 100%);
+    }
+
+    .cosmic-particle {
+      position: absolute;
+      border-radius: 50%;
+      background: radial-gradient(circle, var(--accent-pink) 0%, transparent 70%);
+      opacity: 0;
+      animation: particleFloat 25s infinite linear;
+    }
+
+    .cosmic-particle:nth-child(2n) {
+      background: radial-gradient(circle, var(--accent-purple) 0%, transparent 70%);
+    }
+
+    .cosmic-particle:nth-child(3n) {
+      background: radial-gradient(circle, var(--accent-blue) 0%, transparent 70%);
+    }
+
+    @keyframes particleFloat {
+      0% {
+        transform: translateY(100vh) rotate(0deg) scale(0.5);
+        opacity: 0;
+      }
+      10% {
+        opacity: 0.7;
+      }
+      90% {
+        opacity: 0.7;
+      }
+      100% {
+        transform: translateY(-100px) rotate(360deg) scale(1.2);
+        opacity: 0;
+      }
+    }
+
+    /* Loading Screen */
+    .loading-screen {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: var(--bg-dark);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+      transition: opacity 1s ease, visibility 1s ease;
+    }
+
+    .loading-screen.hidden {
+      opacity: 0;
+      visibility: hidden;
+    }
+
+    .loader {
+      width: 120px;
+      height: 120px;
+      position: relative;
+      margin-bottom: 30px;
+    }
+
+    .loader-petal {
+      position: absolute;
+      width: 50px;
+      height: 50px;
+      background: var(--accent-pink);
+      border-radius: 50% 50% 50% 0;
+      animation: flowerBloom 2.5s infinite ease-in-out;
+      box-shadow: 0 0 20px var(--accent-pink);
+    }
+
+    .loader-petal:nth-child(1) {
+      top: 0;
+      left: 35px;
+      animation-delay: 0s;
+      background: var(--accent-pink);
+    }
+
+    .loader-petal:nth-child(2) {
+      top: 35px;
+      right: 0;
+      animation-delay: 0.3s;
+      background: var(--accent-purple);
+      transform: rotate(90deg);
+    }
+
+    .loader-petal:nth-child(3) {
+      bottom: 0;
+      left: 35px;
+      animation-delay: 0.6s;
+      background: var(--accent-blue);
+      transform: rotate(180deg);
+    }
+
+    .loader-petal:nth-child(4) {
+      top: 35px;
+      left: 0;
+      animation-delay: 0.9s;
+      background: var(--accent-light-pink);
+      transform: rotate(270deg);
+    }
+
+    @keyframes flowerBloom {
+      0%, 100% {
+        transform: scale(1) rotate(var(--rot, 0deg));
+        opacity: 1;
+        filter: brightness(1.2);
+      }
+      50% {
+        transform: scale(0.6) rotate(calc(var(--rot, 0deg) + 25deg));
+        opacity: 0.8;
+        filter: brightness(1.5);
+      }
+    }
+
+    .loading-text {
+      font-size: 1.4rem;
+      color: var(--text-secondary);
+      font-weight: 300;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      background: linear-gradient(90deg, var(--accent-pink), var(--accent-purple), var(--accent-blue));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      animation: textGlow 3s infinite alternate;
+    }
+
+    @keyframes textGlow {
+      0% {
+        filter: drop-shadow(0 0 5px var(--accent-pink));
+      }
+      50% {
+        filter: drop-shadow(0 0 15px var(--accent-purple));
+      }
+      100% {
+        filter: drop-shadow(0 0 10px var(--accent-blue));
+      }
+    }
+
+    /* Header/Navigation */
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      padding: 1.2rem 3rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(10, 10, 26, 0.95);
+      backdrop-filter: blur(15px);
+      z-index: 1000;
+      transition: var(--transition);
+      border-bottom: 1px solid rgba(255, 159, 219, 0.2);
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    header.scrolled {
+      padding: 0.8rem 3rem;
+      background: rgba(10, 10, 26, 0.98);
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+      gap: 12px;
+    }
+
+    .logo-img {
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid var(--accent-pink);
+      padding: 2px;
+      transition: var(--transition);
+    }
+
+    .logo:hover .logo-img {
+      transform: rotate(15deg) scale(1.1);
+      box-shadow: var(--glow);
+    }
+
+    .logo-text {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .logo-name {
+      font-size: 1.4rem;
+      font-weight: 700;
+      background: linear-gradient(90deg, var(--accent-pink), var(--accent-purple));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .logo-title {
+      font-size: 0.8rem;
+      color: var(--text-secondary);
+      font-weight: 300;
+    }
+
+    .nav-links {
+      display: flex;
+      list-style: none;
+      gap: 2.5rem;
+    }
+
+    .nav-links a {
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-size: 0.95rem;
+      font-weight: 500;
+      padding: 0.5rem 0;
+      position: relative;
+      transition: var(--transition);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--accent-pink), var(--accent-purple));
+      transition: var(--transition);
+    }
+
+    .nav-links a:hover {
+      color: var(--text-primary);
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    .mobile-menu-btn {
+      display: none;
+      background: none;
+      border: none;
+      color: var(--accent-pink);
+      font-size: 1.5rem;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .mobile-menu-btn:hover {
+      transform: scale(1.1);
+    }
+
+    /* Education Hero Section */
+    .education-hero {
+      min-height: 60vh;
+      display: flex;
+      align-items: center;
+      padding: 6rem 3rem 2rem;
+      position: relative;
+      text-align: center;
+    }
+
+    .education-hero-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      width: 100%;
+    }
+
+    .education-hero h1 {
+      font-size: clamp(2.5rem, 6vw, 4rem);
+      font-weight: 800;
+      margin-bottom: 0.5rem;
+      background: linear-gradient(135deg, var(--accent-pink), var(--accent-purple), var(--accent-blue));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      line-height: 1.1;
+      text-shadow: 0 0 30px rgba(255, 159, 219, 0.3);
+    }
+
+    .education-hero p {
+      font-size: 1.2rem;
+      color: var(--text-secondary);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    /* Generation Animation */
+    .generation-animation {
+      display: inline-block;
+      position: relative;
+      color: var(--accent-pink);
+    }
+
+    .generation-animation::after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 2px;
+      bottom: -5px;
+      left: 0;
+      background: linear-gradient(90deg, var(--accent-pink), var(--accent-purple));
+      transform: scaleX(0);
+      transform-origin: bottom right;
+      transition: transform 0.5s ease-out;
+    }
+
+    .generation-animation.animate::after {
+      transform: scaleX(1);
+      transform-origin: bottom left;
+    }
+
+    /* Education Section */
+    .section {
+      padding: 2rem 3rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .section-title {
+      display: flex;
+      align-items: center;
+      margin-bottom: 2rem;
+      font-size: 2.2rem;
+      color: var(--text-primary);
+      font-weight: 700;
+      position: relative;
+    }
+
+    .section-title::after {
+      content: '';
+      display: block;
+      height: 3px;
+      width: 300px;
+      background: linear-gradient(90deg, var(--accent-pink), var(--accent-purple));
+      margin-left: 1.5rem;
+      margin-top: 0.5rem;
+      border-radius: 2px;
+    }
+
+    /* SIMPLIFIED TIMELINE - FIXED */
+    .education-timeline {
+      position: relative;
+      margin: 0 auto;
+      padding: 2rem 0;
+    }
+
+    .education-timeline::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 4px;
+      height: 100%;
+      background: linear-gradient(to bottom, var(--accent-pink), var(--accent-purple));
+      border-radius: 10px;
+      box-shadow: var(--glow);
+    }
+
+    .education-card {
+      background-color: var(--bg-card);
+      border-radius: 20px;
+      border: 1px solid rgba(255, 159, 219, 0.2);
+      transition: var(--transition);
+      position: relative;
+      box-shadow: var(--card-glow);
+      width: 45%;
+      margin: 3rem 0;
+      overflow: hidden;
+    }
+
+    .education-card:nth-child(odd) {
+      margin-left: 0;
+      margin-right: auto;
+    }
+
+    .education-card:nth-child(even) {
+      margin-left: auto;
+      margin-right: 0;
+    }
+
+    .education-card:hover {
+      transform: translateY(-10px);
+      border-color: var(--accent-pink);
+      box-shadow: 0 20px 40px rgba(255, 159, 219, 0.3);
+    }
+
+    .education-card::before {
+      content: '';
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: var(--accent-pink);
+      border-radius: 50%;
+      top: 50%;
+      transform: translateY(-50%);
+      box-shadow: 0 0 15px rgba(255, 159, 219, 0.7);
+    }
+
+    .education-card:nth-child(odd)::before {
+      right: -32px;
+    }
+
+    .education-card:nth-child(even)::before {
+      left: -32px;
+    }
+
+    .education-content {
+      padding: 2.5rem;
+    }
+
+    .education-header {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 1.5rem;
+    }
+
+    /* FIXED: Larger logos and removed zoom-in effect */
+    .education-logo {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      object-fit: contain;
+      border: 3px solid var(--accent-pink);
+      box-shadow: 0 0 20px rgba(255, 159, 219, 0.3);
+      margin-right: 1.5rem;
+      background-color: white;
+      padding: 12px;
+      transition: var(--transition);
+    }
+
+    .education-card:hover .education-logo {
+      box-shadow: 0 0 30px rgba(255, 159, 219, 0.5);
+    }
+
+    .education-info {
+      flex: 1;
+    }
+
+    .education-title {
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+      color: var(--accent-pink);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .education-title i {
+      font-size: 1.2rem;
+    }
+
+    .education-institution {
+      font-size: 1.2rem;
+      color: var(--text-primary);
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+    }
+
+    .education-period {
+      color: var(--accent-pink);
+      font-size: 0.9rem;
+      margin-bottom: 1rem;
+      font-weight: 500;
+      padding: 0.3rem 1rem;
+      background: rgba(255, 159, 219, 0.1);
+      border-radius: 20px;
+      display: inline-block;
+    }
+
+    .education-description {
+      color: var(--text-secondary);
+      margin-bottom: 1.5rem;
+      line-height: 1.6;
+      font-size: 1.1rem;
+    }
+
+    .education-technologies {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .tech-tag {
+      background: rgba(255, 159, 219, 0.1);
+      color: var(--accent-pink);
+      padding: 0.5rem 1.2rem;
+      border-radius: 50px;
+      font-size: 0.85rem;
+      font-weight: 500;
+      transition: var(--transition);
+      border: 1px solid rgba(255, 159, 219, 0.2);
+    }
+
+    .tech-tag:hover {
+      background: rgba(255, 159, 219, 0.2);
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(255, 159, 219, 0.2);
+    }
+
+    .education-links {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .read-more-btn {
+      background: transparent;
+      color: var(--accent-pink);
+      border: 1px solid var(--accent-pink);
+      padding: 0.8rem 1.8rem;
+      border-radius: 50px;
+      cursor: pointer;
+      transition: var(--transition);
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+    }
+
+    .read-more-btn:hover {
+      background: rgba(255, 159, 219, 0.1);
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(255, 159, 219, 0.3);
+    }
+
+    /* Modal */
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(10, 10, 26, 0.95);
+      z-index: 2000;
+      overflow-y: auto;
+      padding: 2rem;
+      backdrop-filter: blur(10px);
+    }
+
+    .modal-content {
+      background: var(--bg-card);
+      max-width: 900px;
+      margin: 2rem auto;
+      padding: 3rem;
+      border-radius: 25px;
+      position: relative;
+      border: 1px solid var(--accent-pink);
+      box-shadow: var(--glow);
+    }
+
+    .close-modal {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      background: none;
+      border: none;
+      color: var(--accent-pink);
+      font-size: 1.5rem;
+      cursor: pointer;
+      transition: var(--transition);
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+    }
+
+    .close-modal:hover {
+      background: rgba(255, 159, 219, 0.1);
+      transform: rotate(90deg);
+    }
+
+    .modal-title {
+      font-size: 2.2rem;
+      margin-bottom: 1.5rem;
+      color: var(--accent-pink);
+      background: linear-gradient(135deg, var(--accent-pink), var(--accent-purple));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .modal-period {
+      color: var(--accent-pink);
+      font-size: 1.1rem;
+      margin-bottom: 2rem;
+      font-weight: 500;
+      padding: 0.5rem 1.5rem;
+      background: rgba(255, 159, 219, 0.1);
+      border-radius: 20px;
+      display: inline-block;
+    }
+
+    .modal-description {
+      color: var(--text-secondary);
+      line-height: 1.7;
+      margin-bottom: 2rem;
+      font-size: 1.1rem;
+    }
+
+    .modal-description p {
+      margin-bottom: 1rem;
+    }
+
+    .modal-achievements {
+      list-style: none;
+      color: var(--text-secondary);
+      margin-bottom: 2rem;
+    }
+
+    .modal-achievements li {
+      position: relative;
+      padding-left: 1.8rem;
+      margin-bottom: 0.8rem;
+      line-height: 1.6;
+    }
+
+    .modal-achievements li::before {
+      content: '▸';
+      position: absolute;
+      left: 0;
+      color: var(--accent-pink);
+      font-weight: bold;
+    }
+
+    /* Footer */
+    footer {
+      padding: 4rem 3rem;
+      background: rgba(10, 10, 26, 0.95);
+      border-top: 1px solid rgba(255, 159, 219, 0.2);
+      position: relative;
+      overflow: hidden;
+      margin-top: 3rem;
+    }
+
+    .footer-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 4rem;
+    }
+
+    .footer-section h3 {
+      font-size: 1.5rem;
+      margin-bottom: 1.5rem;
+      color: var(--text-primary);
+      position: relative;
+      padding-bottom: 0.8rem;
+    }
+
+    .footer-section h3::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 50px;
+      height: 3px;
+      background: linear-gradient(90deg, var(--accent-pink), var(--accent-purple));
+    }
+
+    .footer-about {
+      color: var(--text-secondary);
+      line-height: 1.8;
+      margin-bottom: 2rem;
+    }
+
+    .social-links {
+      display: flex;
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .social-link {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background: rgba(255, 159, 219, 0.1);
+      color: var(--accent-pink);
+      font-size: 1.3rem;
+      transition: var(--transition);
+    }
+
+    .social-link:hover {
+      background: linear-gradient(135deg, var(--accent-pink), var(--accent-purple));
+      color: white;
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(255, 159, 219, 0.3);
+    }
+
+    .footer-links {
+      list-style: none;
+    }
+
+    .footer-links li {
+      margin-bottom: 1rem;
+    }
+
+    .footer-links a {
+      color: var(--text-secondary);
+      text-decoration: none;
+      transition: var(--transition);
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+    }
+
+    .footer-links a:hover {
+      color: var(--accent-pink);
+      transform: translateX(5px);
+    }
+
+    .footer-links i {
+      font-size: 0.9rem;
+    }
+
+    .contact-info-footer {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .contact-info-footer div {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      color: var(--text-secondary);
+    }
+
+    .contact-info-footer i {
+      color: var(--accent-pink);
+      font-size: 1.2rem;
+    }
+
+    .footer-bottom {
+      text-align: center;
+      margin-top: 4rem;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(255, 159, 219, 0.2);
+      color: var(--text-secondary);
+    }
+
+    /* Animations */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 1s ease, transform 1s ease;
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Light Effects */
+    .light-effect {
+      position: absolute;
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(255, 159, 219, 0.1) 0%, rgba(255, 159, 219, 0) 70%);
+      filter: blur(20px);
+      z-index: -1;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 1200px) {
+      .education-hero, .section {
+        padding: 5rem 2rem 2rem;
+      }
+    }
+
+    @media (max-width: 992px) {
+      .education-card {
+        width: 90%;
+        margin: 2rem auto;
+      }
+      
+      .education-card:nth-child(odd),
+      .education-card:nth-child(even) {
+        margin-left: auto;
+        margin-right: auto;
+      }
+      
+      .education-timeline::before {
+        left: 30px;
+      }
+      
+      .education-card::before {
+        left: -32px;
+      }
+      
+      .education-card:nth-child(odd)::before,
+      .education-card:nth-child(even)::before {
+        left: -32px;
+        right: auto;
+      }
+    }
+
+    @media (max-width: 768px) {
+      header {
+        padding: 1rem 1.5rem;
+      }
+      
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: rgba(10, 10, 26, 0.98);
+        flex-direction: column;
+        padding: 2rem;
+        gap: 1.5rem;
+        backdrop-filter: blur(20px);
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+
+      .mobile-menu-btn {
+        display: block;
+      }
+
+      .education-hero {
+        padding: 5rem 1.5rem 1.5rem;
+      }
+      
+      .section {
+        padding: 2rem 1.5rem;
+      }
+      
+      .section-title {
+        font-size: 1.8rem;
+        flex-direction: column;
+        align-items: flex-start;
+        margin-bottom: 1.5rem;
+      }
+      
+      .section-title::after {
+        width: 150px;
+        margin-left: 0;
+        margin-top: 0.8rem;
+      }
+      
+      .education-card {
+        width: 100%;
+        margin: 1.5rem 0;
+      }
+      
+      .education-header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+      
+      .education-logo {
+        margin-right: 0;
+        margin-bottom: 1.5rem;
+        width: 90px;
+        height: 90px;
+      }
+      
+      .modal-content {
+        padding: 2rem;
+        margin: 1rem;
+      }
+      
+      .modal-title {
+        font-size: 1.8rem;
+      }
+      
+      .footer-content {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .education-hero h1 {
+        font-size: 2.2rem;
+      }
+      
+      .education-hero p {
+        font-size: 1.1rem;
+      }
+      
+      .education-card {
+        margin: 1rem 0;
+      }
+      
+      .education-content {
+        padding: 1.5rem;
+      }
+      
+      .education-title {
+        font-size: 1.3rem;
+      }
+      
+      .education-institution {
+        font-size: 1.1rem;
+      }
+      
+      .education-logo {
+        width: 80px;
+        height: 80px;
+      }
+    }
+
+    /* Specific fixes for Kubernetes icon */
+    .devicon-kubernetes-plain:before {
+      content: "\f1d8";
+      font-family: 'Font Awesome 6 Brands';
+    }
+  </style>
+</head>
+<body>
+  <!-- Cosmic Background -->
+  <div class="cosmic-bg" id="cosmicBg"></div>
+
+  <!-- Loading Screen -->
+  <div class="loading-screen" id="loadingScreen">
+    <div class="loader">
+      <div class="loader-petal"></div>
+      <div class="loader-petal"></div>
+      <div class="loader-petal"></div>
+      <div class="loader-petal"></div>
+    </div>
+    <div class="loading-text">Syrine's Education</div>
+  </div>
+
+  <!-- Light Effects -->
+  <div class="light-effect" style="top: 10%; left: 10%;"></div>
+  <div class="light-effect" style="top: 60%; right: 10%;"></div>
+
+  <!-- Education Hero Section -->
+  <section class="education-hero">
+    <div class="education-hero-content">
+      <h1 id="heroTitle">My <span class="generation-animation">Education</span> Journey</h1>
+      <p id="heroSubtitle">Academic path in DevOps & Cloud Engineering and Preparatory Studies</p>
+    </div>
+  </section>
+
+  <!-- Education Section -->
+  <section class="section" id="education">
+    <h2 class="section-title">Academic Path</h2>
+    <div class="education-timeline">
+      <!-- ESPRIT -->
+      <div class="education-card">
+        <div class="education-content">
+          <div class="education-header">
+            <img src="img/esprit.png" alt="ESPRIT Logo" class="education-logo">
+            <div class="education-info">
+              <h3 class="education-title">
+                <i class="fas fa-graduation-cap"></i>
+                DevOps & Cloud Engineering
+              </h3>
+              <div class="education-institution">ESPRIT School of Engineering</div>
+              <div class="education-period">Sep 2021 - Present</div>
+            </div>
+          </div>
+          <p class="education-description">
+            Pursuing an engineering degree specialized in DevOps & Cloud Computing, focusing on modern application development, cloud solutions deployment, containerization, orchestration, CI/CD, and pipeline automation.
+          </p>
+          <div class="education-technologies">
+            <span class="tech-tag">Docker</span>
+            <span class="tech-tag">Kubernetes</span>
+            <span class="tech-tag">AWS</span>
+            <span class="tech-tag">CI/CD</span>
+            <span class="tech-tag">Terraform</span>
+            <span class="tech-tag">Ansible</span>
+          </div>
+          <div class="education-links">
+            <button class="read-more-btn" data-education="esprit">
+              <i class="fas fa-external-link-alt"></i> Read More
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Lycée El Wafa -->
+      <div class="education-card">
+        <div class="education-content">
+          <div class="education-header">
+            <img src="img/wafa.jpg" alt="Lycée El Wafa Logo" class="education-logo">
+            <div class="education-info">
+              <h3 class="education-title">
+                <i class="fas fa-atom"></i>
+                Baccalauréat Technique
+              </h3>
+              <div class="education-institution">Lycée El Wafa</div>
+              <div class="education-period">Sep 2020 - Jun 2021</div>
+            </div>
+          </div>
+          <p class="education-description">
+            Completed technical baccalaureate with a focus on science and technology, laying the foundation for engineering studies.
+          </p>
+          <div class="education-technologies">
+            <span class="tech-tag">Mathematics</span>
+            <span class="tech-tag">Physics</span>
+            <span class="tech-tag">Technology</span>
+            <span class="tech-tag">Computer Science</span>
+          </div>
+          <div class="education-links">
+            <button class="read-more-btn" data-education="lycee">
+              <i class="fas fa-external-link-alt"></i> Read More
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Education Modals -->
+  <div class="modal" id="educationModal">
+    <div class="modal-content">
+      <button class="close-modal" id="closeModal">&times;</button>
+      <h2 class="modal-title" id="modalTitle"></h2>
+      <p class="modal-period" id="modalPeriod"></p>
+      <div class="modal-description" id="modalDescription"></div>
+      <ul class="modal-achievements" id="modalAchievements"></ul>
+    </div>
+  </div>
+
+  <script>
+    // Loading Screen
+    window.addEventListener('load', function() {
+      const loadingScreen = document.getElementById('loadingScreen');
+      setTimeout(() => {
+        loadingScreen.classList.add('hidden');
+      }, 2500);
+      
+      // Start title animation after loading
+      setTimeout(() => {
+        animateHeroText();
+      }, 2600);
+    });
+
+    // Cosmic Background Animation with slower particles
+    function createCosmicBackground() {
+      const cosmicBg = document.getElementById('cosmicBg');
+      const particleCount = 40;
+      
+      for (let i = 0; i < particleCount; i++) {
+        const particle = document.createElement('div');
+        particle.classList.add('cosmic-particle');
+        
+        // Random size
+        const size = Math.random() * 12 + 3;
+        particle.style.width = `${size}px`;
+        particle.style.height = `${size}px`;
+        
+        // Random position
+        particle.style.left = `${Math.random() * 100}%`;
+        
+        // Slower animation
+        const duration = Math.random() * 30 + 20;
+        const delay = Math.random() * 15;
+        particle.style.animationDuration = `${duration}s`;
+        particle.style.animationDelay = `${delay}s`;
+        
+        cosmicBg.appendChild(particle);
+      }
+    }
+
+    // Navigation scroll effect
+    function handleScroll() {
+      const header = document.querySelector('header');
+      if (header && window.scrollY > 50) {
+        header.classList.add('scrolled');
+      } else if (header) {
+        header.classList.remove('scrolled');
+      }
+    }
+
+    // Mobile menu toggle
+    function setupMobileMenu() {
+      const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+      const navLinks = document.querySelector('.nav-links');
+      
+      if (mobileMenuBtn && navLinks) {
+        mobileMenuBtn.addEventListener('click', () => {
+          navLinks.classList.toggle('active');
+          mobileMenuBtn.innerHTML = navLinks.classList.contains('active') 
+            ? '<i class="fas fa-times"></i>' 
+            : '<i class="fas fa-bars"></i>';
+        });
+        
+        // Close menu when clicking a nav link
+        navLinks.querySelectorAll('a').forEach(link => {
+          link.addEventListener('click', () => {
+            navLinks.classList.remove('active');
+            mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+          });
+        });
+      }
+    }
+
+    // Fade-in animation on scroll
+    function setupScrollAnimations() {
+      const fadeElements = document.querySelectorAll('.fade-in');
+      
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      }, { threshold: 0.1 });
+      
+      fadeElements.forEach(el => observer.observe(el));
+    }
+
+    // Hero text animation
+    function animateHeroText() {
+      const heroTitle = document.getElementById('heroTitle');
+      const heroSubtitle = document.getElementById('heroSubtitle');
+      
+      // Store original content
+      const originalTitle = heroTitle.innerHTML;
+      const originalSubtitle = heroSubtitle.textContent;
+      
+      // Clear content
+      heroTitle.innerHTML = '';
+      heroSubtitle.textContent = '';
+      
+      // Function to create animated span
+      function createAnimatedSpan(text, delay, isGeneration = false) {
+        return new Promise(resolve => {
+          setTimeout(() => {
+            const span = document.createElement('span');
+            span.textContent = text;
+            if (isGeneration) {
+              span.className = 'generation-animation';
+            }
+            span.style.opacity = '0';
+            span.style.transform = 'translateY(20px)';
+            span.style.transition = 'all 0.6s ease';
+            heroTitle.appendChild(span);
+            
+            // Animate in
+            setTimeout(() => {
+              span.style.opacity = '1';
+              span.style.transform = 'translateY(0)';
+              
+              if (isGeneration) {
+                // Trigger the underline animation after fade in
+                setTimeout(() => {
+                  span.classList.add('animate');
+                }, 300);
+              }
+              
+              resolve();
+            }, 100);
+          }, delay);
+        });
+      }
+      
+      // Animate title parts
+      createAnimatedSpan('My ', 100)
+        .then(() => createAnimatedSpan('Education', 300, true))
+        .then(() => createAnimatedSpan(' Journey', 500));
+      
+      // Animate subtitle word by word
+      const subtitleWords = originalSubtitle.split(' ');
+      let subtitleDelay = 800;
+      
+      subtitleWords.forEach((word, index) => {
+        setTimeout(() => {
+          const wordSpan = document.createElement('span');
+          wordSpan.textContent = word + (index < subtitleWords.length - 1 ? ' ' : '');
+          wordSpan.style.opacity = '0';
+          wordSpan.style.transform = 'translateY(10px)';
+          wordSpan.style.transition = 'all 0.5s ease';
+          heroSubtitle.appendChild(wordSpan);
+          
+          // Animate in
+          setTimeout(() => {
+            wordSpan.style.opacity = '1';
+            wordSpan.style.transform = 'translateY(0)';
+          }, 50);
+        }, subtitleDelay);
+        subtitleDelay += 100;
+      });
+    }
+
+    // Education modal functionality
+    function setupEducationModals() {
+      const modal = document.getElementById('educationModal');
+      const closeModal = document.getElementById('closeModal');
+      const modalTitle = document.getElementById('modalTitle');
+      const modalPeriod = document.getElementById('modalPeriod');
+      const modalDescription = document.getElementById('modalDescription');
+      const modalAchievements = document.getElementById('modalAchievements');
+      
+      const educationDetails = {
+        esprit: {
+          title: "DevOps & Cloud Engineering - ESPRIT",
+          period: "Sep 2021 - Present",
+          description: `
+            <p><strong>Tunis, Tunisia · On-site</strong></p>
+            <p>Enrolled in an intensive DevOps & Cloud Engineering program at ESPRIT School of Engineering, specializing in modern application development, cloud solutions deployment, containerization (Docker), orchestration (Kubernetes), continuous integration and deployment (CI/CD), and pipeline automation.</p>
+            <p>The program combines theoretical knowledge with practical hands-on experience in cutting-edge cloud technologies and DevOps practices.</p>
+          `,
+          achievements: [
+            "Specialized in Docker containerization and Kubernetes orchestration for scalable applications",
+            "Mastered AWS cloud services and infrastructure management",
+            "Developed expertise in CI/CD pipelines using Jenkins, GitLab CI, and GitHub Actions",
+            "Implemented Infrastructure as Code using Terraform and Ansible",
+            "Built microservices architectures and deployed them on cloud platforms",
+            "Participated in competitive hackathons and real-world cloud projects",
+            "Gained practical experience in monitoring and observability with Prometheus and Grafana",
+            "Developed full-stack applications with modern frameworks (Spring Boot, Angular, Django)"
+          ]
+        },
+        lycee: {
+          title: "Technical Baccalaureate - Lycée El Wafa",
+          period: "Sep 2020 - Jun 2021",
+          description: `
+            <p><strong>Ariana, Tunisia · On-site</strong></p>
+            <p>Completed the technical baccalaureate program with a focus on science and technology, achieving excellent academic results that laid a strong foundation for engineering studies.</p>
+            <p>The curriculum provided comprehensive training in mathematics, physics, and computer science, preparing students for higher education in engineering and technology fields.</p>
+          `,
+          achievements: [
+            "Achieved excellent results in mathematics and physics",
+            "Developed strong analytical and problem-solving skills",
+            "Gained foundational knowledge in computer science and programming",
+            "Participated in science and technology projects",
+            "Developed laboratory skills in physics and technology",
+            "Built a solid foundation for engineering studies",
+            "Enhanced critical thinking and logical reasoning abilities",
+            "Prepared for competitive engineering school entrance exams"
+          ]
+        }
+      };
+      
+      document.querySelectorAll('.read-more-btn').forEach(button => {
+        button.addEventListener('click', () => {
+          const educationId = button.getAttribute('data-education');
+          const education = educationDetails[educationId];
+          
+          if (education) {
+            modalTitle.textContent = education.title;
+            modalPeriod.textContent = education.period;
+            modalDescription.innerHTML = education.description;
+            
+            modalAchievements.innerHTML = '';
+            education.achievements.forEach(achievement => {
+              const li = document.createElement('li');
+              li.textContent = achievement;
+              modalAchievements.appendChild(li);
+            });
+            
+            modal.style.display = 'block';
+            document.body.style.overflow = 'hidden';
+          }
+        });
+      });
+      
+      closeModal.addEventListener('click', () => {
+        modal.style.display = 'none';
+        document.body.style.overflow = 'auto';
+      });
+      
+      window.addEventListener('click', (e) => {
+        if (e.target === modal) {
+          modal.style.display = 'none';
+          document.body.style.overflow = 'auto';
+        }
+      });
+    }
+
+    // Smooth scrolling for anchor links
+    function setupSmoothScrolling() {
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+          e.preventDefault();
+          const targetId = this.getAttribute('href');
+          if (targetId === '#') return;
+          const targetElement = document.querySelector(targetId);
+          if (targetElement) {
+            window.scrollTo({
+              top: targetElement.offsetTop - 100,
+              behavior: 'smooth'
+            });
+          }
+        });
+      });
+    }
+
+    // Main initialization
+    document.addEventListener('DOMContentLoaded', () => {
+      // Insert Header directly
+      document.body.insertAdjacentHTML('afterbegin', `
+        <header id="mainHeader">
+          <a href="index.html" class="logo">
+            <img src="img/syrine.jpg" alt="Syrine Ben Amara" class="logo-img">
+            <div class="logo-text">
+              <span class="logo-name">Syrine Ben Amara</span>
+              <span class="logo-title">DevOps & Cloud Engineer</span>
+            </div>
+          </a>
+          <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html#about">About</a></li>
+            <li><a href="index.html#skills">Skills</a></li>
+            <li><a href="index.html#projects">Projects</a></li>
+            <li><a href="index.html#resume">Resume</a></li>
+            <li><a href="education.html">Education</a></li>
+            <li><a href="experience.html">Experience</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+          </ul>
+          <button class="mobile-menu-btn">
+            <i class="fas fa-bars"></i>
+          </button>
+        </header>
+      `);
+
+      // Insert Footer directly
+      document.body.insertAdjacentHTML('beforeend', `
+        <footer>
+          <div class="footer-content">
+            <div class="footer-section">
+              <h3>Syrine Ben Amara</h3>
+              <p class="footer-about">
+                DevOps & Cloud Engineering student at ESPRIT, passionate about modern application development, cloud solutions, and pipeline automation.
+              </p>
+              <div class="social-links">
+                <a href="https://www.linkedin.com/in/syrine-ben-amara/" class="social-link" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://github.com/syrine0219" class="social-link" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://www.facebook.com/syrine.benamara" class="social-link" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                <a href="mailto:syrinebenamara52@gmail.com" class="social-link"><i class="fas fa-envelope"></i></a>
+              </div>
+            </div>
+            <div class="footer-section">
+              <h3>Quick Links</h3>
+              <ul class="footer-links">
+                <li><a href="index.html"><i class="fas fa-chevron-right"></i> Home</a></li>
+                <li><a href="index.html#about"><i class="fas fa-chevron-right"></i> About</a></li>
+                <li><a href="index.html#skills"><i class="fas fa-chevron-right"></i> Skills</a></li>
+                <li><a href="education.html"><i class="fas fa-chevron-right"></i> Education</a></li>
+                <li><a href="experience.html"><i class="fas fa-chevron-right"></i> Experience</a></li>
+                <li><a href="index.html#projects"><i class="fas fa-chevron-right"></i> Projects</a></li>
+              </ul>
+            </div>
+            <div class="footer-section">
+              <h3>Contact</h3>
+              <div class="contact-info-footer">
+                <div><i class="fas fa-map-marker-alt"></i><span>Ariana, Tunisia</span></div>
+                <div><i class="fas fa-phone"></i><span>+216 52 212 829</span></div>
+                <div><i class="fas fa-envelope"></i><span>syrinebenamara52@gmail.com</span></div>
+                <div><i class="fas fa-graduation-cap"></i><span>ESPRIT - DevOps & Cloud</span></div>
+              </div>
+            </div>
+          </div>
+          <div class="footer-bottom">
+            <p>&copy; 2025 Syrine Ben Amara. All rights reserved.</p>
+            <p style="margin-top: 10px; font-size: 0.9rem; opacity: 0.7;">Developed with ❤️ and passion for technology</p>
+          </div>
+        </footer>
+      `);
+
+      // Run all initializations
+      createCosmicBackground();
+      setupMobileMenu();
+      setupEducationModals();
+      setupSmoothScrolling();
+      window.addEventListener('scroll', handleScroll);
+      
+      // Add fade-in class to elements
+      document.querySelectorAll('.section-title, .education-card').forEach(el => {
+        el.classList.add('fade-in');
+      });
+      
+      // Setup scroll animations
+      setupScrollAnimations();
+    });
+  </script>
+</body>
+</html>
