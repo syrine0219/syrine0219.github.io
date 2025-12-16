@@ -6,6 +6,8 @@
   <title>Syrine Ben Amra | DevOps & Cloud Engineer</title>
   <link rel="icon" type="image/x-icon" href="img/mylogo.jpg">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Add Kubernetes icon support -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
   <style>
     :root {
       --bg-dark: #0a0a1a;
@@ -60,7 +62,7 @@
       border-radius: 50%;
       background: radial-gradient(circle, var(--accent-pink) 0%, transparent 70%);
       opacity: 0;
-      animation: particleFloat 15s infinite linear;
+      animation: particleFloat 25s infinite linear;
     }
 
     .cosmic-particle:nth-child(2n) {
@@ -101,7 +103,7 @@
       justify-content: center;
       align-items: center;
       z-index: 9999;
-      transition: opacity 0.5s ease, visibility 0.5s ease;
+      transition: opacity 1s ease, visibility 1s ease;
     }
 
     .loading-screen.hidden {
@@ -122,7 +124,7 @@
       height: 50px;
       background: var(--accent-pink);
       border-radius: 50% 50% 50% 0;
-      animation: flowerBloom 1.8s infinite ease-in-out;
+      animation: flowerBloom 2.5s infinite ease-in-out;
       box-shadow: 0 0 20px var(--accent-pink);
     }
 
@@ -136,7 +138,7 @@
     .loader-petal:nth-child(2) {
       top: 35px;
       right: 0;
-      animation-delay: 0.2s;
+      animation-delay: 0.3s;
       background: var(--accent-purple);
       transform: rotate(90deg);
     }
@@ -144,7 +146,7 @@
     .loader-petal:nth-child(3) {
       bottom: 0;
       left: 35px;
-      animation-delay: 0.4s;
+      animation-delay: 0.6s;
       background: var(--accent-blue);
       transform: rotate(180deg);
     }
@@ -152,7 +154,7 @@
     .loader-petal:nth-child(4) {
       top: 35px;
       left: 0;
-      animation-delay: 0.6s;
+      animation-delay: 0.9s;
       background: var(--accent-light-pink);
       transform: rotate(270deg);
     }
@@ -180,15 +182,18 @@
       -webkit-background-clip: text;
       background-clip: text;
       color: transparent;
-      animation: textGlow 2s infinite alternate;
+      animation: textGlow 3s infinite alternate;
     }
 
     @keyframes textGlow {
       0% {
         filter: drop-shadow(0 0 5px var(--accent-pink));
       }
-      100% {
+      50% {
         filter: drop-shadow(0 0 15px var(--accent-purple));
+      }
+      100% {
+        filter: drop-shadow(0 0 10px var(--accent-blue));
       }
     }
 
@@ -438,7 +443,7 @@
         0 0 0 20px rgba(194, 156, 255, 0.1),
         inset 0 0 50px rgba(255, 159, 219, 0.2);
       transition: var(--transition);
-      animation: morphing 20s infinite ease-in-out;
+      animation: morphing 25s infinite ease-in-out;
     }
 
     @keyframes morphing {
@@ -464,33 +469,35 @@
     /* Floating Tech Icons */
     .floating-tech {
       position: absolute;
-      width: 60px;
-      height: 60px;
-      background: rgba(20, 20, 40, 0.8);
+      width: 70px;
+      height: 70px;
+      background: rgba(20, 20, 40, 0.9);
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
-      box-shadow: 0 0 20px rgba(255, 159, 219, 0.3);
+      box-shadow: 0 0 25px rgba(255, 159, 219, 0.4);
       z-index: 1;
-      animation: floatTech 8s infinite ease-in-out;
+      animation: floatTech 12s infinite ease-in-out;
       border: 2px solid var(--accent-pink);
+      backdrop-filter: blur(5px);
     }
 
     .floating-tech i {
       color: var(--accent-pink);
-      font-size: 1.8rem;
+      font-size: 2rem;
       transition: var(--transition);
     }
 
     .floating-tech:hover {
       background: rgba(255, 159, 219, 0.2);
-      transform: scale(1.2);
-      box-shadow: 0 0 30px var(--accent-pink);
+      transform: scale(1.3);
+      box-shadow: 0 0 40px var(--accent-pink);
     }
 
     .floating-tech:hover i {
       color: white;
+      transform: scale(1.2);
     }
 
     .tech-1 {
@@ -502,28 +509,40 @@
     .tech-2 {
       bottom: 20%;
       right: 8%;
-      animation-delay: 2s;
+      animation-delay: 3s;
     }
 
     .tech-3 {
       top: 50%;
       left: 10%;
-      animation-delay: 4s;
+      animation-delay: 6s;
     }
 
     .tech-4 {
       top: 20%;
       right: 15%;
-      animation-delay: 6s;
+      animation-delay: 9s;
     }
 
     @keyframes floatTech {
       0%, 100% {
-        transform: translateY(0) rotate(0deg);
+        transform: translateY(0) rotate(0deg) scale(1);
+      }
+      25% {
+        transform: translateY(-20px) rotate(5deg) scale(1.05);
       }
       50% {
-        transform: translateY(-25px) rotate(10deg);
+        transform: translateY(-10px) rotate(-5deg) scale(1.1);
       }
+      75% {
+        transform: translateY(-30px) rotate(3deg) scale(1.05);
+      }
+    }
+
+    /* Kubernetes Icon Fix */
+    .devicon-kubernetes-plain {
+      font-size: 2rem;
+      color: var(--accent-pink);
     }
 
     /* Sections */
@@ -656,8 +675,8 @@
 
     .skill-icon:hover {
       background: rgba(255, 159, 219, 0.1);
-      transform: translateY(-5px);
-      box-shadow: 0 10px 20px rgba(255, 159, 219, 0.2);
+      transform: translateY(-8px) scale(1.05);
+      box-shadow: 0 10px 25px rgba(255, 159, 219, 0.2);
     }
 
     .skill-icon i {
@@ -676,6 +695,62 @@
       font-weight: 500;
       color: var(--text-secondary);
       text-align: center;
+    }
+
+    /* Languages Section */
+    .languages-section {
+      margin-top: 4rem;
+    }
+
+    .languages-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .language-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+      padding: 2rem;
+      border-radius: 15px;
+      background: var(--bg-card);
+      box-shadow: var(--card-glow);
+      border: 1px solid rgba(255, 159, 219, 0.2);
+      transition: var(--transition);
+    }
+
+    .language-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 30px rgba(255, 159, 219, 0.2);
+      border-color: var(--accent-pink);
+    }
+
+    .language-flag {
+      font-size: 3rem;
+      transition: var(--transition);
+    }
+
+    .language-item:hover .language-flag {
+      transform: scale(1.2);
+    }
+
+    .language-name {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-bottom: 0.5rem;
+    }
+
+    .language-level {
+      font-size: 0.9rem;
+      color: var(--accent-pink);
+      font-weight: 500;
+      padding: 0.3rem 1rem;
+      background: rgba(255, 159, 219, 0.1);
+      border-radius: 20px;
     }
 
     /* Projects Section */
@@ -1089,7 +1164,7 @@
     .fade-in {
       opacity: 0;
       transform: translateY(30px);
-      transition: opacity 0.8s ease, transform 0.8s ease;
+      transition: opacity 1s ease, transform 1s ease;
     }
 
     .fade-in.visible {
@@ -1112,6 +1187,10 @@
       .contact-container, .footer-content {
         grid-template-columns: 1fr;
         gap: 3rem;
+      }
+      
+      .projects-grid {
+        grid-template-columns: 1fr;
       }
     }
 
@@ -1154,11 +1233,7 @@
         height: 300px;
       }
       
-      .projects-grid {
-        grid-template-columns: 1fr;
-      }
-      
-      .skills-grid {
+      .projects-grid, .skills-grid {
         grid-template-columns: 1fr;
       }
       
@@ -1177,6 +1252,19 @@
       .hero-title {
         font-size: 1.8rem;
       }
+      
+      .floating-tech {
+        width: 50px;
+        height: 50px;
+      }
+      
+      .floating-tech i {
+        font-size: 1.5rem;
+      }
+      
+      .resume-section {
+        padding: 4rem 2rem;
+      }
     }
     
     @media (max-width: 480px) {
@@ -1186,18 +1274,36 @@
       }
       
       .floating-tech {
-        width: 45px;
-        height: 45px;
+        width: 40px;
+        height: 40px;
       }
       
       .floating-tech i {
-        font-size: 1.3rem;
+        font-size: 1.2rem;
       }
       
       .cta-button, .resume-btn, .submit-btn {
         padding: 1rem 2rem;
         font-size: 1rem;
       }
+      
+      .logo-name {
+        font-size: 1.2rem;
+      }
+      
+      .logo-title {
+        font-size: 0.7rem;
+      }
+      
+      .footer-content {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* Specific fixes for Kubernetes icon */
+    .devicon-kubernetes-plain:before {
+      content: "\f1d8";
+      font-family: 'Font Awesome 6 Brands';
     }
   </style>
 </head>
@@ -1213,7 +1319,7 @@
       <div class="loader-petal"></div>
       <div class="loader-petal"></div>
     </div>
-    <div class="loading-text">Syrine's Universe</div>
+    <div class="loading-text">Syrine's world</div>
   </div>
 
   <!-- Header will be loaded by JavaScript -->
@@ -1222,14 +1328,14 @@
   <section class="hero" id="home">
     <div class="hero-content">
       <div class="hero-text">
-        <p class="hero-greeting fade-in">Bonjour, je suis</p>
+        <p class="hero-greeting fade-in">Hello, I'm</p>
         <h1 class="hero-name fade-in">Syrine Ben Amra</h1>
-        <h2 class="hero-title fade-in">Étudiante en Ingénierie DevOps & Cloud</h2>
+        <h2 class="hero-title fade-in">DevOps & Cloud Engineering Student</h2>
         <p class="hero-description fade-in" id="typingDescription">
           <!-- Text will be populated by JavaScript -->
         </p>
         <a href="#contact" class="cta-button fade-in">
-          <i class="fas fa-paper-plane"></i> Contactez-moi
+          <i class="fas fa-paper-plane"></i> Get In Touch
         </a>
       </div>
       <div class="hero-profile fade-in">
@@ -1244,9 +1350,7 @@
         <div class="floating-tech tech-2">
           <i class="fas fa-cloud"></i>
         </div>
-        <div class="floating-tech tech-3">
-          <i class="fab fa-kubernetes"></i>
-        </div>
+      
         <div class="floating-tech tech-4">
           <i class="fas fa-code"></i>
         </div>
@@ -1256,18 +1360,18 @@
 
   <!-- About Section -->
   <section class="section" id="about">
-    <h2 class="section-title fade-in">À Propos de Moi</h2>
+    <h2 class="section-title fade-in">About Me</h2>
     <div class="about-content">
       <div class="about-card fade-in">
         <div class="about-text">
           <p>
-            Étudiante passionnée à ESPRIT en ingénierie DevOps & Cloud Computing, je suis développeuse logicielle spécialisée dans la conception d'applications modernes, le déploiement de solutions cloud, la conteneurisation (Docker), l'orchestration (Kubernetes), l'intégration continue et le déploiement continu (CI/CD), ainsi que l'automatisation des pipelines.
+            I'm a passionate DevOps & Cloud Engineering student at ESPRIT, specializing in modern application development, cloud solutions deployment, containerization (Docker), orchestration (Kubernetes), continuous integration and deployment (CI/CD), and pipeline automation.
           </p>
           <p>
-            Animée par la curiosité, la motivation, l'engagement et un fort esprit d'équipe, je fais preuve d'autonomie et suis toujours prête à relever de nouveaux défis. Mon parcours combine développement logiciel et technologies cloud de pointe pour créer des solutions scalables et efficaces.
+            Driven by curiosity, motivation, commitment, and a strong team spirit, I demonstrate autonomy and am always ready to take on new challenges. My journey combines software development with cutting-edge cloud technologies to create scalable, efficient solutions.
           </p>
           <p>
-            Au-delà de la technologie, j'apprécie le théâtre, le sport et l'expansion continue de mes connaissances dans les domaines technologiques émergents. Je crois en la création d'une technologie qui résout non seulement des problèmes, mais qui apporte également de la valeur et de la beauté à la vie des gens.
+            Beyond technology, I enjoy theater, sports, and continuously expanding my knowledge in emerging tech fields. I believe in creating technology that not only solves problems but also brings value and beauty to people's lives.
           </p>
         </div>
       </div>
@@ -1276,7 +1380,7 @@
 
   <!-- Skills Section -->
   <section class="section" id="skills">
-    <h2 class="section-title fade-in">Compétences & Technologies</h2>
+    <h2 class="section-title fade-in">Skills & Technologies</h2>
     <div class="skills-grid">
       <div class="skills-category fade-in">
         <h3 class="category-title"><i class="fas fa-cloud"></i> DevOps & Cloud</h3>
@@ -1285,9 +1389,9 @@
             <i class="fab fa-docker"></i>
             <span class="skill-name">Docker</span>
           </div>
-          <div class="skill-icon">
-            <i class="fab fa-kubernetes"></i>
-            <span class="skill-name">Kubernetes</span>
+           <div class="skill-item">
+            <div class="skill-icon"><i class="fas fa-cubes"></i></div>
+            <div class="skill-name">Kubernetes</div>
           </div>
           <div class="skill-icon">
             <i class="fas fa-server"></i>
@@ -1317,7 +1421,7 @@
       </div>
 
       <div class="skills-category fade-in">
-        <h3 class="category-title"><i class="fas fa-code"></i> Développement</h3>
+        <h3 class="category-title"><i class="fas fa-code"></i> Development</h3>
         <div class="skills-icons">
           <div class="skill-icon">
             <i class="fab fa-java"></i>
@@ -1355,7 +1459,7 @@
       </div>
 
       <div class="skills-category fade-in">
-        <h3 class="category-title"><i class="fas fa-tools"></i> Outils & Méthodes</h3>
+        <h3 class="category-title"><i class="fas fa-tools"></i> Tools & Methods</h3>
         <div class="skills-icons">
           <div class="skill-icon">
             <i class="fas fa-chart-line"></i>
@@ -1392,36 +1496,58 @@
         </div>
       </div>
     </div>
+
+    <!-- Languages Section -->
+    <div class="languages-section fade-in">
+      <h3 class="category-title"><i class="fas fa-language"></i> Languages</h3>
+      <div class="languages-grid">
+        <div class="language-item">
+          <div class="language-flag">🇹🇳</div>
+          <div class="language-name">Arabic</div>
+          <div class="language-level">Native</div>
+        </div>
+        <div class="language-item">
+          <div class="language-flag">🇫🇷</div>
+          <div class="language-name">French</div>
+          <div class="language-level">B2 Level</div>
+        </div>
+        <div class="language-item">
+          <div class="language-flag">🇬🇧</div>
+          <div class="language-name">English</div>
+          <div class="language-level">B2 Level</div>
+        </div>
+      </div>
+    </div>
   </section>
 
   <!-- Projects Section -->
   <section class="section" id="projects">
-    <h2 class="section-title fade-in">Projets Phares</h2>
+    <h2 class="section-title fade-in">Featured Projects</h2>
     <div class="projects-grid">
       <div class="project-card fade-in">
         <div class="project-header">
           <div>
-            <h3 class="project-title">TurathAI - Plateforme Patrimoniale</h3>
-            <span class="project-date">Projet Intégré Cloud</span>
+            <h3 class="project-title">TurathAI - Cultural Heritage Platform</h3>
+            <span class="project-date">Cloud Integration Project</span>
           </div>
         </div>
         <p class="project-description">
-          Développement d'une plateforme pour promouvoir les sites patrimoniaux et les expériences culturelles de la Tunisie, avec des cartes interactives et des recommandations personnalisées par AI. Déploiement sur une infrastructure cloud privée à l'aide de Docker et Ansible.
+          Development of a platform to promote Tunisia's heritage sites and cultural experiences with interactive maps and AI-powered personalized recommendations. Deployment on private cloud infrastructure using Docker and Ansible.
         </p>
         <div class="project-tech">
           <span class="tech-tag">Docker</span>
           <span class="tech-tag">Ansible</span>
           <span class="tech-tag">AI</span>
-          <span class="tech-tag">Cloud Privé</span>
-          <span class="tech-tag">Cartes Interactives</span>
+          <span class="tech-tag">Private Cloud</span>
+          <span class="tech-tag">Interactive Maps</span>
           <span class="tech-tag">Python</span>
         </div>
         <div class="project-links">
           <a href="https://github.com/syrine0219/TurathAI" class="project-link" target="_blank">
-            <i class="fab fa-github"></i> Voir le Code
+            <i class="fab fa-github"></i> View Code
           </a>
           <a href="#contact" class="project-link">
-            <i class="fas fa-info-circle"></i> Plus de Détails
+            <i class="fas fa-info-circle"></i> More Details
           </a>
         </div>
       </div>
@@ -1429,12 +1555,12 @@
       <div class="project-card fade-in">
         <div class="project-header">
           <div>
-            <h3 class="project-title">MatchMate - Réservation Sportive</h3>
-            <span class="project-date">Projet Intégré (Desktop, Web, Mobile)</span>
+            <h3 class="project-title">MatchMate - Sports Facility Booking</h3>
+            <span class="project-date">Integrated Project (Desktop, Web, Mobile)</span>
           </div>
         </div>
         <p class="project-description">
-          Application de réservation d'installations sportives avec JavaFX. Connexion à une base de données pour gérer les réservations. Version web développée avec Symfony. Interface moderne et intuitive pour la gestion des créneaux sportifs.
+          Sports facility reservation application with JavaFX. Database connection to manage reservations. Web version developed with Symfony. Modern and intuitive interface for managing sports time slots.
         </p>
         <div class="project-tech">
           <span class="tech-tag">JavaFX</span>
@@ -1446,10 +1572,10 @@
         </div>
         <div class="project-links">
           <a href="https://github.com/syrine0219/MatchMate" class="project-link" target="_blank">
-            <i class="fab fa-github"></i> Voir le Code
+            <i class="fab fa-github"></i> View Code
           </a>
           <a href="#contact" class="project-link">
-            <i class="fas fa-info-circle"></i> Plus de Détails
+            <i class="fas fa-info-circle"></i> More Details
           </a>
         </div>
       </div>
@@ -1458,22 +1584,22 @@
 
   <!-- Resume Section -->
   <section class="section" id="resume">
-    <h2 class="section-title fade-in">Mon Curriculum Vitae</h2>
+    <h2 class="section-title fade-in">My Resume</h2>
     <div class="resume-section fade-in">
-      <h3 class="resume-title">Télécharger mon CV</h3>
+      <h3 class="resume-title">Download My CV</h3>
       <p class="resume-description">
-        Vous souhaitez en savoir plus sur mon parcours académique, mes expériences professionnelles et mes certifications ? Téléchargez mon CV complet pour découvrir mon parcours en DevOps et Cloud Computing.
+        Want to know more about my academic background, professional experiences, and certifications? Download my complete resume to discover my journey in DevOps and Cloud Computing.
       </p>
       <button class="resume-btn" id="resumeBtn">
         <i class="fas fa-download"></i>
-        Télécharger le CV (PDF)
+        Download CV (PDF)
       </button>
     </div>
   </section>
 
   <!-- Contact Section -->
   <section class="section" id="contact">
-    <h2 class="section-title fade-in">Contactez-moi</h2>
+    <h2 class="section-title fade-in">Contact Me</h2>
     <div class="contact-container">
       <div class="contact-info fade-in">
         <div class="contact-item">
@@ -1481,8 +1607,8 @@
             <i class="fas fa-map-marker-alt"></i>
           </div>
           <div class="contact-details">
-            <h3>Localisation</h3>
-            <p>Ariana, Tunisie</p>
+            <h3>Location</h3>
+            <p>Ariana, Tunisia</p>
           </div>
         </div>
         <div class="contact-item">
@@ -1490,7 +1616,7 @@
             <i class="fas fa-phone"></i>
           </div>
           <div class="contact-details">
-            <h3>Téléphone</h3>
+            <h3>Phone</h3>
             <p>+216 52 212 829</p>
           </div>
         </div>
@@ -1508,23 +1634,23 @@
             <i class="fas fa-graduation-cap"></i>
           </div>
           <div class="contact-details">
-            <h3>Formation</h3>
-            <p>ESPRIT - Ingénierie DevOps & Cloud</p>
+            <h3>Education</h3>
+            <p>ESPRIT - DevOps & Cloud Engineering</p>
           </div>
         </div>
       </div>
       <form class="contact-form fade-in" id="contact-form">
         <div class="form-group">
-          <input type="text" class="form-input" id="name" placeholder="Votre Nom" required>
+          <input type="text" class="form-input" id="name" placeholder="Your Name" required>
         </div>
         <div class="form-group">
-          <input type="email" class="form-input" id="email" placeholder="Votre Email" required>
+          <input type="email" class="form-input" id="email" placeholder="Your Email" required>
         </div>
         <div class="form-group">
-          <textarea class="form-input form-textarea" id="message" placeholder="Votre Message" required></textarea>
+          <textarea class="form-input form-textarea" id="message" placeholder="Your Message" required></textarea>
         </div>
         <button type="submit" class="submit-btn">
-          <i class="fas fa-paper-plane"></i> Envoyer le Message
+          <i class="fas fa-paper-plane"></i> Send Message
         </button>
       </form>
     </div>
@@ -1533,299 +1659,299 @@
   <!-- Footer will be loaded by JavaScript -->
 
   <script>
-  // Loading Screen
-  window.addEventListener('load', function() {
-    const loadingScreen = document.getElementById('loadingScreen');
-    setTimeout(() => {
-      loadingScreen.classList.add('hidden');
-    }, 2000);
-  });
+    // Loading Screen
+    window.addEventListener('load', function() {
+      const loadingScreen = document.getElementById('loadingScreen');
+      setTimeout(() => {
+        loadingScreen.classList.add('hidden');
+      }, 2500); // Increased delay for slower loading
+    });
 
-  // Cosmic Background Animation
-  function createCosmicBackground() {
-    const cosmicBg = document.getElementById('cosmicBg');
-    const particleCount = 50;
-    
-    for (let i = 0; i < particleCount; i++) {
-      const particle = document.createElement('div');
-      particle.classList.add('cosmic-particle');
+    // Cosmic Background Animation with slower particles
+    function createCosmicBackground() {
+      const cosmicBg = document.getElementById('cosmicBg');
+      const particleCount = 40; // Reduced for better performance
       
-      // Random size
-      const size = Math.random() * 15 + 5;
-      particle.style.width = `${size}px`;
-      particle.style.height = `${size}px`;
-      
-      // Random position
-      particle.style.left = `${Math.random() * 100}%`;
-      
-      // Random animation
-      const duration = Math.random() * 20 + 10;
-      const delay = Math.random() * 5;
-      particle.style.animationDuration = `${duration}s`;
-      particle.style.animationDelay = `${delay}s`;
-      
-      cosmicBg.appendChild(particle);
+      for (let i = 0; i < particleCount; i++) {
+        const particle = document.createElement('div');
+        particle.classList.add('cosmic-particle');
+        
+        // Random size
+        const size = Math.random() * 12 + 3;
+        particle.style.width = `${size}px`;
+        particle.style.height = `${size}px`;
+        
+        // Random position
+        particle.style.left = `${Math.random() * 100}%`;
+        
+        // Slower animation
+        const duration = Math.random() * 30 + 20;
+        const delay = Math.random() * 15;
+        particle.style.animationDuration = `${duration}s`;
+        particle.style.animationDelay = `${delay}s`;
+        
+        cosmicBg.appendChild(particle);
+      }
     }
-  }
 
-  // Navigation scroll effect
-  function handleScroll() {
-    const header = document.querySelector('header');
-    if (header && window.scrollY > 50) {
-      header.classList.add('scrolled');
-    } else if (header) {
-      header.classList.remove('scrolled');
+    // Navigation scroll effect
+    function handleScroll() {
+      const header = document.querySelector('header');
+      if (header && window.scrollY > 50) {
+        header.classList.add('scrolled');
+      } else if (header) {
+        header.classList.remove('scrolled');
+      }
     }
-  }
 
-  // Mobile menu toggle
-  function setupMobileMenu() {
-    const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
-    const navLinks = document.querySelector('.nav-links');
-    
-    if (mobileMenuBtn && navLinks) {
-      mobileMenuBtn.addEventListener('click', () => {
-        navLinks.classList.toggle('active');
-        mobileMenuBtn.innerHTML = navLinks.classList.contains('active') 
-          ? '<i class="fas fa-times"></i>' 
-          : '<i class="fas fa-bars"></i>';
-      });
+    // Mobile menu toggle
+    function setupMobileMenu() {
+      const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+      const navLinks = document.querySelector('.nav-links');
       
-      // Close menu when clicking a nav link
-      navLinks.querySelectorAll('a').forEach(link => {
-        link.addEventListener('click', () => {
-          navLinks.classList.remove('active');
-          mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+      if (mobileMenuBtn && navLinks) {
+        mobileMenuBtn.addEventListener('click', () => {
+          navLinks.classList.toggle('active');
+          mobileMenuBtn.innerHTML = navLinks.classList.contains('active') 
+            ? '<i class="fas fa-times"></i>' 
+            : '<i class="fas fa-bars"></i>';
+        });
+        
+        // Close menu when clicking a nav link
+        navLinks.querySelectorAll('a').forEach(link => {
+          link.addEventListener('click', () => {
+            navLinks.classList.remove('active');
+            mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+          });
+        });
+      }
+    }
+
+    // Resume download
+    function setupResumeDownload() {
+      const resumeBtn = document.getElementById('resumeBtn');
+      
+      if (resumeBtn) {
+        resumeBtn.addEventListener('click', () => {
+          const link = document.createElement('a');
+          link.href = 'img/syrine-Ben-amara.pdf';
+          link.download = 'syrine-Ben-amara.pdf';
+          document.body.appendChild(link);
+          link.click();
+          document.body.removeChild(link);
+        });
+      }
+    }
+
+    // Fade-in animation on scroll
+    function setupScrollAnimations() {
+      const fadeElements = document.querySelectorAll('.fade-in');
+      
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      }, { threshold: 0.1 });
+      
+      fadeElements.forEach(el => observer.observe(el));
+    }
+
+    // Typing animation for hero description - SLOWER
+    function setupTypingAnimation() {
+      const descriptionElement = document.getElementById('typingDescription');
+      const texts = [
+        "Specialized in modern application development, cloud solutions deployment, and CI/CD pipeline automation.",
+        "Passionate about Docker, Kubernetes, and creating scalable, efficient cloud infrastructures.",
+        "Ready to take on new technological challenges! ✨"
+      ];
+      
+      let textIndex = 0;
+      let charIndex = 0;
+      let currentText = '';
+      let isDeleting = false;
+      let isPaused = false;
+      
+      function type() {
+        if (isPaused) return;
+        
+        const current = textIndex % texts.length;
+        const fullText = texts[current];
+        
+        if (isDeleting) {
+          currentText = fullText.substring(0, charIndex - 1);
+          charIndex--;
+        } else {
+          currentText = fullText.substring(0, charIndex + 1);
+          charIndex++;
+        }
+        
+        descriptionElement.innerHTML = currentText + '<span class="typing-text"></span>';
+        
+        let typeSpeed = 70; // Slower typing speed
+        
+        if (isDeleting) {
+          typeSpeed /= 2;
+        }
+        
+        if (!isDeleting && charIndex === fullText.length) {
+          typeSpeed = 2500; // Longer pause at end
+          isDeleting = true;
+        } else if (isDeleting && charIndex === 0) {
+          isDeleting = false;
+          textIndex++;
+          typeSpeed = 800; // Longer pause before next text
+        }
+        
+        setTimeout(type, typeSpeed);
+      }
+      
+      // Start typing after a delay
+      setTimeout(() => {
+        type();
+      }, 2500);
+      
+      // Pause typing on hover
+      if (descriptionElement) {
+        descriptionElement.addEventListener('mouseenter', () => { isPaused = true; });
+        descriptionElement.addEventListener('mouseleave', () => { 
+          isPaused = false; 
+          setTimeout(type, 1500); 
+        });
+      }
+    }
+
+    // Contact form handling
+    function setupContactForm() {
+      const contactForm = document.getElementById('contact-form');
+      
+      if (contactForm) {
+        contactForm.addEventListener('submit', function(e) {
+          e.preventDefault();
+          
+          const name = document.getElementById('name').value.trim();
+          const email = document.getElementById('email').value.trim();
+          const message = document.getElementById('message').value.trim();
+          
+          if (!name || !email || !message) {
+            alert('Please fill in all fields.');
+            return;
+          }
+          
+          const submitBtn = contactForm.querySelector('.submit-btn');
+          const originalText = submitBtn.innerHTML;
+          
+          submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+          submitBtn.disabled = true;
+          
+          setTimeout(() => {
+            alert(`Thank you ${name}! Your message has been sent successfully. I will respond to ${email} as soon as possible.`);
+            contactForm.reset();
+            submitBtn.innerHTML = originalText;
+            submitBtn.disabled = false;
+          }, 1500);
+        });
+      }
+    }
+
+    // Main initialization
+    document.addEventListener('DOMContentLoaded', () => {
+      // Insert Header directly
+      document.body.insertAdjacentHTML('afterbegin', `
+        <header id="mainHeader">
+          <a href="index.html" class="logo">
+            <img src="img/mylogo.jpg" alt="Syrine Ben Amra" class="logo-img">
+            <div class="logo-text">
+              <span class="logo-name">Syrine Ben Amra</span>
+              <span class="logo-title">DevOps & Cloud Engineer</span>
+            </div>
+          </a>
+          <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html#about">About</a></li>
+            <li><a href="index.html#skills">Skills</a></li>
+            <li><a href="index.html#resume">Resume</a></li>
+            <li><a href="education.html">Education</a></li>
+            <li><a href="experience.html">Experience</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+          </ul>
+          <button class="mobile-menu-btn">
+            <i class="fas fa-bars"></i>
+          </button>
+        </header>
+      `);
+
+      // Insert Footer directly
+      document.body.insertAdjacentHTML('beforeend', `
+        <footer>
+          <div class="footer-content">
+            <div class="footer-section">
+              <h3>Syrine Ben Amra</h3>
+              <p class="footer-about">
+                DevOps & Cloud Engineering student at ESPRIT, passionate about modern application development, cloud solutions, and pipeline automation.
+              </p>
+              <div class="social-links">
+                <a href="https://www.linkedin.com/in/syrine-ben-amara/" class="social-link" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://github.com/syrine0219" class="social-link" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://www.facebook.com/syrine.benamara" class="social-link" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                <a href="mailto:syrinebenamara52@gmail.com" class="social-link"><i class="fas fa-envelope"></i></a>
+              </div>
+            </div>
+            <div class="footer-section">
+              <h3>Quick Links</h3>
+              <ul class="footer-links">
+                <li><a href="index.html"><i class="fas fa-chevron-right"></i> Home</a></li>
+                <li><a href="index.html#about"><i class="fas fa-chevron-right"></i> About</a></li>
+                <li><a href="index.html#skills"><i class="fas fa-chevron-right"></i> Skills</a></li>
+                <li><a href="education.html"><i class="fas fa-chevron-right"></i> Education</a></li>
+                <li><a href="experience.html"><i class="fas fa-chevron-right"></i> Experience</a></li>
+                <li><a href="projects.html"><i class="fas fa-chevron-right"></i> Projects</a></li>
+              </ul>
+            </div>
+            <div class="footer-section">
+              <h3>Contact</h3>
+              <div class="contact-info-footer">
+                <div><i class="fas fa-map-marker-alt"></i><span>Ariana, Tunisia</span></div>
+                <div><i class="fas fa-phone"></i><span>+216 52 212 829</span></div>
+                <div><i class="fas fa-envelope"></i><span>syrinebenamara52@gmail.com</span></div>
+                <div><i class="fas fa-graduation-cap"></i><span>ESPRIT - DevOps & Cloud</span></div>
+              </div>
+            </div>
+          </div>
+          <div class="footer-bottom">
+            <p>&copy; 2025 Syrine Ben Amra. All rights reserved.</p>
+            <p style="margin-top: 10px; font-size: 0.9rem; opacity: 0.7;">Developed with ❤️ and passion for technology</p>
+          </div>
+        </footer>
+      `);
+
+      // Run all initializations
+      createCosmicBackground();
+      setupMobileMenu();
+      setupResumeDownload();
+      setupScrollAnimations();
+      setupTypingAnimation();
+      setupContactForm();
+      window.addEventListener('scroll', handleScroll);
+
+      // Smooth scrolling for anchor links
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+          e.preventDefault();
+          const targetId = this.getAttribute('href');
+          if (targetId === '#') return;
+          const targetElement = document.querySelector(targetId);
+          if (targetElement) {
+            window.scrollTo({
+              top: targetElement.offsetTop - 100,
+              behavior: 'smooth'
+            });
+          }
         });
       });
-    }
-  }
-
-  // Resume download button (corrected to match your button ID: resumeBtn)
-  function setupResumeDownload() {
-    const resumeBtn = document.getElementById('resumeBtn');
-    
-    if (resumeBtn) {
-      resumeBtn.addEventListener('click', () => {
-        const link = document.createElement('a');
-        link.href = 'img/syrine-Ben-amara.pdf'; // Make sure this file exists
-        link.download = 'CV-Syrine-Ben-Amra.pdf';
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
-      });
-    }
-  }
-
-  // Fade-in animation on scroll
-  function setupScrollAnimations() {
-    const fadeElements = document.querySelectorAll('.fade-in');
-    
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-        }
-      });
-    }, { threshold: 0.1 });
-    
-    fadeElements.forEach(el => observer.observe(el));
-  }
-
-  // Typing animation for hero description
-  function setupTypingAnimation() {
-    const descriptionElement = document.getElementById('typingDescription');
-    const texts = [
-      "Spécialisée dans le développement d'applications modernes, le déploiement de solutions cloud, et l'automatisation des pipelines CI/CD.",
-      "Passionnée par Docker, Kubernetes, et la création d'infrastructures cloud scalables et efficaces.",
-      "Prête à relever de nouveaux défis technologiques ! ✨"
-    ];
-    
-    let textIndex = 0;
-    let charIndex = 0;
-    let currentText = '';
-    let isDeleting = false;
-    let isPaused = false;
-    
-    function type() {
-      if (isPaused) return;
-      
-      const current = textIndex % texts.length;
-      const fullText = texts[current];
-      
-      if (isDeleting) {
-        currentText = fullText.substring(0, charIndex - 1);
-        charIndex--;
-      } else {
-        currentText = fullText.substring(0, charIndex + 1);
-        charIndex++;
-      }
-      
-      descriptionElement.innerHTML = currentText + '<span class="typing-text"></span>';
-      
-      let typeSpeed = 50;
-      
-      if (isDeleting) {
-        typeSpeed /= 2;
-      }
-      
-      if (!isDeleting && charIndex === fullText.length) {
-        typeSpeed = 2000;
-        isDeleting = true;
-      } else if (isDeleting && charIndex === 0) {
-        isDeleting = false;
-        textIndex++;
-        typeSpeed = 500;
-      }
-      
-      setTimeout(type, typeSpeed);
-    }
-    
-    // Start typing after a delay
-    setTimeout(() => {
-      type();
-    }, 2000);
-    
-    // Pause typing on hover
-    if (descriptionElement) {
-      descriptionElement.addEventListener('mouseenter', () => { isPaused = true; });
-      descriptionElement.addEventListener('mouseleave', () => { 
-        isPaused = false; 
-        setTimeout(type, 1000); 
-      });
-    }
-  }
-
-  // Contact form handling
-  function setupContactForm() {
-    const contactForm = document.getElementById('contact-form');
-    
-    if (contactForm) {
-      contactForm.addEventListener('submit', function(e) {
-        e.preventDefault();
-        
-        const name = document.getElementById('name').value.trim();
-        const email = document.getElementById('email').value.trim();
-        const message = document.getElementById('message').value.trim();
-        
-        if (!name || !email || !message) {
-          alert('Veuillez remplir tous les champs.');
-          return;
-        }
-        
-        const submitBtn = contactForm.querySelector('.submit-btn');
-        const originalText = submitBtn.innerHTML;
-        
-        submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Envoi en cours...';
-        submitBtn.disabled = true;
-        
-        setTimeout(() => {
-          alert(`Merci ${name} ! Votre message a été envoyé avec succès. Je vous répondrai à ${email} dès que possible.`);
-          contactForm.reset();
-          submitBtn.innerHTML = originalText;
-          submitBtn.disabled = false;
-        }, 1500);
-      });
-    }
-  }
-
-  // Main initialization
-  document.addEventListener('DOMContentLoaded', () => {
-    // Insert Header directly (avoids CORS issues when testing locally)
-    document.body.insertAdjacentHTML('afterbegin', `
-      <header id="mainHeader">
-        <a href="index.html" class="logo">
-          <img src="img/syrine.jpg" alt="Syrine Ben Amra" class="logo-img">
-          <div class="logo-text">
-            <span class="logo-name">Syrine Ben Amra</span>
-            <span class="logo-title">DevOps & Cloud Engineer</span>
-          </div>
-        </a>
-        <ul class="nav-links">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="index.html#about">About</a></li>
-          <li><a href="index.html#skills">Skills</a></li>
-          <li><a href="index.html#resume">Resume</a></li>
-          <li><a href="education.html">Education</a></li>
-          <li><a href="experience.html">Experience</a></li>
-          <li><a href="projects.html">Projects</a></li>
-          <li><a href="index.html#contact">Contact</a></li>
-        </ul>
-        <button class="mobile-menu-btn">
-          <i class="fas fa-bars"></i>
-        </button>
-      </header>
-    `);
-
-    // Insert Footer directly
-    document.body.insertAdjacentHTML('beforeend', `
-      <footer>
-        <div class="footer-content">
-          <div class="footer-section">
-            <h3>Syrine Ben Amra</h3>
-            <p class="footer-about">
-              Étudiante en ingénierie DevOps & Cloud Computing à ESPRIT, passionnée par le développement d'applications modernes, les solutions cloud et l'automatisation des pipelines.
-            </p>
-            <div class="social-links">
-              <a href="https://www.linkedin.com/in/syrine-ben-amara/" class="social-link" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-              <a href="https://github.com/syrine0219" class="social-link" target="_blank"><i class="fab fa-github"></i></a>
-              <a href="https://www.facebook.com/syrine.benamara" class="social-link" target="_blank"><i class="fab fa-facebook-f"></i></a>
-              <a href="mailto:syrinebenamara52@gmail.com" class="social-link"><i class="fas fa-envelope"></i></a>
-            </div>
-          </div>
-          <div class="footer-section">
-            <h3>Liens Rapides</h3>
-            <ul class="footer-links">
-              <li><a href="index.html"><i class="fas fa-chevron-right"></i> Accueil</a></li>
-              <li><a href="index.html#about"><i class="fas fa-chevron-right"></i> À Propos</a></li>
-              <li><a href="index.html#skills"><i class="fas fa-chevron-right"></i> Compétences</a></li>
-              <li><a href="education.html"><i class="fas fa-chevron-right"></i> Formation</a></li>
-              <li><a href="experience.html"><i class="fas fa-chevron-right"></i> Expérience</a></li>
-              <li><a href="projects.html"><i class="fas fa-chevron-right"></i> Projets</a></li>
-            </ul>
-          </div>
-          <div class="footer-section">
-            <h3>Contact</h3>
-            <div class="contact-info-footer">
-              <div><i class="fas fa-map-marker-alt"></i><span>Ariana, Tunisie</span></div>
-              <div><i class="fas fa-phone"></i><span>+216 52 212 829</span></div>
-              <div><i class="fas fa-envelope"></i><span>syrinebenamara52@gmail.com</span></div>
-              <div><i class="fas fa-graduation-cap"></i><span>ESPRIT - DevOps & Cloud</span></div>
-            </div>
-          </div>
-        </div>
-        <div class="footer-bottom">
-          <p>&copy; 2025 Syrine Ben Amra. Tous droits réservés.</p>
-          <p style="margin-top: 10px; font-size: 0.9rem; opacity: 0.7;">Développé avec ❤️ et passion pour la technologie</p>
-        </div>
-      </footer>
-    `);
-
-    // Run all initializations
-    createCosmicBackground();
-    setupMobileMenu();           // Works after header is inserted
-    setupResumeDownload();       // Fixed function name & button ID
-    setupScrollAnimations();
-    setupTypingAnimation();
-    setupContactForm();
-    window.addEventListener('scroll', handleScroll);
-
-    // Smooth scrolling for anchor links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function(e) {
-        e.preventDefault();
-        const targetId = this.getAttribute('href');
-        if (targetId === '#') return;
-        const targetElement = document.querySelector(targetId);
-        if (targetElement) {
-          window.scrollTo({
-            top: targetElement.offsetTop - 100,
-            behavior: 'smooth'
-          });
-        }
-      });
     });
-  });
-</script>
+  </script>
 </body>
 </html>
